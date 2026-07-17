@@ -1,22 +1,16 @@
 class Solution {
     public int subtractProductAndSum(int n) {
-        String[] nums= String.valueOf(n).split("");
-int[] num= new int[nums.length];
-for( int i =0;i< nums.length;i++){
-    num[i]= Integer.parseInt(nums[i]);
 
-}
-int pdt=1;
-for( int i =0;i<num.length;i++){
-    pdt *= num[i];
-}
-int sum=0;
-for( int i =0;i< num.length;i++){
-    sum+= num[i];
-}
-int res =0;
- res= pdt - sum;
- return res ;
+        int product = 1;
+        int sum = 0;
 
+        while (n > 0) {
+            int digit = n % 10;   // Get the last digit
+            product *= digit;
+            sum += digit;
+            n = n / 10;           // Remove the last digit
+        }
+
+        return product - sum;
     }
 }
