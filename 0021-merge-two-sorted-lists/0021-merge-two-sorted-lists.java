@@ -11,18 +11,14 @@ class Solution {
                 current_node.next = l2;
                 l2 = l2.next;
             }
-
             current_node = current_node.next;
         }
-
         if (l1 != null) {
             current_node.next = l1;
         }
-
         if (l2 != null) {
             current_node.next = l2;
         }
-
         return temp_node.next;
     }
 }
